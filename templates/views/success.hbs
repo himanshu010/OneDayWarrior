@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chilanka&family=Lato&family=Quicksand&family=Raleway:wght@300;700&display=swap"
+        rel="stylesheet" />
+    <link href="css/success.css" rel="stylesheet" type="text/css" />
+    <title>Verified!</title>
+    <style>
+        /* .container {
+  height: 100vh;
+} */
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(cyan, transparent),
+                linear-gradient(-45deg, magenta, transparent),
+                linear-gradient(45deg, yellow, transparent);
+            background-blend-mode: multiply;
+        }
+
+        main {
+            font-size: 50px;
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            right: 1em;
+            bottom: 1em;
+            background: white;
+            border-radius: 3px;
+        }
+
+        .image {
+            position: absolute;
+            right: 1em;
+            bottom: 1em;
+        }
+
+        .head-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .heading {
+            margin-right: 20px;
+            margin-left: 20px;
+            display: inline !important;
+            font-size: 65px;
+            font-family: "Raleway", sans-serif;
+        }
+
+        .text-container {
+            width: 900px;
+        }
+
+        .text {
+            margin-left: 20px;
+            margin-top: 40px;
+            margin-right: 20px;
+            font-size: 35px;
+            font-family: "Lato", sans-serif;
+        }
+
+        .text-special {
+            font-size: 40px;
+            color: gray;
+        }
+
+        .email {
+            font-family: "Quicksand", sans-serif;
+            margin-left: 40px;
+            margin-top: 20px;
+            font-size: 25px;
+        }
+
+        .email-special {
+            font-size: 30px;
+            color: gray;
+        }
+
+        .signature {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signature-container {
+            position: absolute;
+            font-family: "Chilanka", cursive;
+            bottom: 0em;
+            right: 11em;
+        }
+
+        .signature-special {
+            font-family: "Lato", sans-serif;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="head-container">
+            <div class="heading">
+                You are going to be a
+                <span style="font-size: 76px; font-weight: bold; font-family: Lato">1DayWarrior</span>
+                now
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="text">
+                Thanks a lot <span class="text-special">{{this.firstName}} {{this.lastName}}</span> to come forward
+                and help Corona Warriors on
+                <span class="text-special">{{this.date}}</span>.<br />
+                This contribution really means a lot to us and to those Heroes
+            </div>
+        </div>
+        <div class="email-container">
+            <div class="email">
+                Email: <span class="email-special">{{this.email}}</span>
+            </div>
+        </div>
+        <div class="signature-container">
+            <img src="https://raw.githubusercontent.com/himanshu010/wethex/master/assets/Screenshot__71_-removebg-preview.png"
+                height="140px" width="200px" crossorigin='anonymous' />
+            <div class="signature">
+                Himanshu Aswal<br /><span class="signature-special">(Founder: 1DayWarrior)</span>
+            </div>
+        </div>
+        <img class="image"
+            src="https://raw.githubusercontent.com/himanshu010/wethex/master/assets/93707336_2896858047042139_3636139378880806912_o-02-removebg-preview.png"
+            height="500px" width="450px" crossorigin='anonymous' />
+    </main>
+</body>
+
+</html>

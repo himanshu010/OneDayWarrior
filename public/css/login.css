@@ -1,0 +1,186 @@
+body {
+  background-image: url("../assets/images/2868010.jpg");
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Secular One", sans-serif;
+  background-size: cover;
+}
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #0d28c0;
+}
+
+a:hover {
+  color: #071561;
+}
+
+.main-container {
+  display: flex;
+  width: 70%;
+  height: 700px;
+  min-height: 80vh;
+  background-color: white;
+  margin: 10vh auto;
+  border-radius: 12px;
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.in {
+  height: 40px !important;
+  margin: -10px;
+}
+
+.left-container {
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.right-container {
+  width: 60%;
+  height: 100%;
+  background-image: url("../assets/images/3699121-removebg-preview.png");
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 10px 10px 0;
+}
+.signup-form {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form input {
+  border-radius: 200px;
+  padding: 5px 15px;
+  /* height: 2rem; */
+  font-size: 1rem;
+  background-color: #ddd;
+  color: #444;
+  border: none;
+}
+
+.signup-form input {
+  display: block;
+  /* margin-top: 1rem; */
+  width: 100%;
+  font-family: inherit;
+}
+
+.signup-form input.first-name,
+.signup-form input.last-name {
+  width: 48%;
+}
+
+.signup-form input:focus {
+  outline: none;
+}
+
+.signup-form input[type="checkbox"] {
+  margin: 1rem 0.5rem 1rem 0;
+}
+
+.signup-form input[type="checkbox"],
+.signup-form input[type="checkbox"] + label {
+  display: inline-block;
+  width: auto;
+}
+
+.signup-form .check {
+  display: flex;
+  align-items: center;
+}
+
+.signup-form button {
+  color: white;
+  background-color: #bf360c;
+  border: none;
+  padding: 1rem;
+  font-family: inherit;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  display: block;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.signup-form button:hover {
+  background-color: #83260a;
+  cursor: pointer;
+}
+
+button.disabled {
+  color: grey;
+  background-color: darkgrey;
+}
+
+button.disabled:hover {
+  color: grey;
+  background-color: darkgrey;
+  cursor: unset;
+}
+
+.signin-link {
+  color: #777;
+}
+
+.signin-link:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+@media (max-width: 1240px) {
+  .left-container {
+    width: 50%;
+  }
+  .right-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 970px) {
+  .signup-form button {
+    font-size: 1rem;
+  }
+  .signup-form input[type="checkbox"] + label {
+    font-size: 0.8rem;
+  }
+  .signin-link {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .left-container {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .main-container h1 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .signup-form input {
+    margin-top: 0.5rem;
+  }
+  .right-container {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .main-container {
+    width: 90%;
+    left: 5%;
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chilanka&family=Lato&family=Quicksand&family=Raleway:wght@300;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/warriors.css" <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-head">
+        <div class="heading">
+            These are the real heroes
+        </div>
+    </div>
+    <div>
+        <div class="head" style="display:flex; justify-content: center;">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="padding: 10px">Name</th>
+                    <th style="padding: 10px">Age</th>
+                    <th style="padding: 10px">Email</th>
+                    <th style="padding: 10px">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each warriors}}
+                <tr>
+                    <td>{{this.firstName}} {{this.lastName}}</td>
+                    <td>{{this.age}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.date}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+</html>

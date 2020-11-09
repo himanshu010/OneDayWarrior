@@ -1,0 +1,85 @@
+/* .container {
+  height: 100vh;
+} */
+html,
+body {
+  height: 100%;
+}
+body {
+  background: linear-gradient(cyan, transparent),
+    linear-gradient(-45deg, magenta, transparent),
+    linear-gradient(45deg, yellow, transparent);
+  background-blend-mode: multiply;
+}
+
+main {
+  font-size: 50px;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  bottom: 1em;
+  background: white;
+  border-radius: 3px;
+}
+
+.image {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+.head-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heading {
+  display: inline !important;
+  font-size: 65px;
+  font-family: "Raleway", sans-serif;
+}
+.text-container {
+  width: 900px;
+}
+.text {
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 35px;
+  font-family: "Lato", sans-serif;
+}
+.text-special {
+  font-size: 40px;
+  color: gray;
+}
+.email {
+  font-family: "Quicksand", sans-serif;
+  margin-left: 40px;
+  margin-top: 20px;
+  font-size: 25px;
+}
+.email-special {
+  font-size: 30px;
+  color: gray;
+}
+
+.signature {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signature-container {
+  position: absolute;
+  font-family: "Chilanka", cursive;
+  bottom: 0em;
+  right: 11em;
+}
+
+.signature-special {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+}

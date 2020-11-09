@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/generated.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chilanka&family=Lato&family=Quicksand&family=Raleway:wght@300;700&display=swap"
+        rel="stylesheet" />
+    <title>Thanks</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="heading">
+                Thanks {{this.firstName}} {{this.lastName}}!<br />
+                Your contribution really means lot to us.
+            </div>
+            <br />
+            <div class="text">
+                The concerned authorities have been informed about your contribution.
+                They will notify you about the next steps and will guide you to
+                complete your task on {{this.date}}.
+            </div>
+            <div class="row pdf">
+                <a href="mypdf.pdf" download="1DayWarrior">
+                    <div>
+                        <div class="btn-circle-download">
+                            <svg id="arrow" width="14px" height="20px" viewBox="17 14 14 20">
+                                <path d="M24,15 L24,32"></path>
+                                <polyline points="30 27 24 33 18 27"></polyline>
+                            </svg>
+                            <svg id="check" width="21px" height="15px" viewBox="13 17 21 15">
+                                <polyline points="32.5 18.5 20 31 14.5 25.5"></polyline>
+                            </svg>
+                            <svg id="border" width="48px" height="48px" viewBox="0 0 48 48">
+                                <path
+                                    d="M24,1 L24,1 L24,1 C36.7025492,1 47,11.2974508 47,24 L47,24 L47,24 C47,36.7025492 36.7025492,47 24,47 L24,47 L24,47 C11.2974508,47 1,36.7025492 1,24 L1,24 L1,24 C1,11.2974508 11.2974508,1 24,1 L24,1 Z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <img class="image" src="assets/images/website.jpeg" />
+            </div>
+        </header>
+    </div>
+    <script type="text/javascript" src="js/generated.js"></script>
+</body>
+
+</html>

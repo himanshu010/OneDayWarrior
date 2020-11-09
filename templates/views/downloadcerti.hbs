@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Webpixels" />
+    <title>Download</title>
+    <!-- Preloader -->
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.querySelector("body").classList.add("loaded");
+        }, 300);
+      });
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="css/downloadcerti.css" id="stylesheet" />
+    <style>
+      section {
+        background-image: url("assets/images/2645079.jpg") !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main content -->
+    <section>
+      <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center min-vh-100">
+          <div class="col-md-6 col-lg-5 col-xl-5 py-6 py-md-0">
+            <div class="card shadow zindex-100 mb-0">
+              <div class="card-body px-md-5 py-5">
+                <div class="mb-5">
+                  <h6 class="h3">Download Certificate</h6>
+                  <p class="text-muted mb-0">
+                    Enter email to continue
+                  </p>
+                </div>
+                <span class="clearfix"></span>
+                <form action="/verification" method="post">
+                  <div class="form-group">
+                    <label class="form-control-label">Email address</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"
+                          ><i data-feather="user"></i
+                        ></span>
+                      </div>
+
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="input-email"
+                        placeholder="name@example.com"
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <button type="submit" class="btn btn-block btn-primary">
+                      Continue
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer px-md-5">
+                <small>Not registered?</small>
+                <a href="/register" class="small font-weight-bold">Register Today</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Core JS  -->
+    <!-- Quick JS -->
+    <script src="js/downloadcerti.js"></script>
+    <!-- Feather Icons -->
+    <script>
+      feather.replace({
+        width: "1em",
+        height: "1em",
+      });
+    </script>
+  </body>
+</html>

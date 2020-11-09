@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Login Page Example</title>
+    <meta name="description" content="Login Page Example" />
+    <meta name="author" content="Ali Abbasi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <h1>So let's volunteer</h1>
+            <div style="width: 100%;">
+                <form class="signup-form" method="post" action="/verification">
+                    <label for="firstName">First name:</label><br>
+                    <input class="in" type="text" id="firstName" name="firstName" placeholder="John" required><br>
+                    <label for="lastName">Last name:</label><br>
+                    <input class="in" type="text" id="lastName" name="lastName" placeholder="Doe" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input class="in" type="email" id="email" name="email" placeholder="johndoe@email.com"
+                        required><br><br>
+                    <label for="age">Age:</label><br>
+                    <input class="in" type="number" id="age" name="age" min="3" max="100" placeholder="18"
+                        required><br><br>
+                    <label for="date">Date:</label><br>
+                    <input class="in" type="date" id="date" name="date" required />
+                    <div class="check">
+                        <input class="in" type="checkbox" onclick="checkTerms()" id="agree-terms">
+                        <label for="agree-terms">Agree to
+                            <a href="#">Terms &amp; Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" id="submit" class="button disabled" disabled>Register</button>
+                </form>
+            </div>
+            {{!-- <div class="signin-link-container">
+                <p class="signin-link">ALready have an account? Click here!</p>
+            </div> --}}
+        </div>
+        <div class="right-container"></div>
+    </div>
+    <script>
+        function checkTerms() {
+            var termsCheck = document.getElementById('agree-terms');
+            var btn = document.getElementById('submit');
+            if (termsCheck.checked == true) {
+                btn.classList.remove("disabled");
+                btn.disabled = false;
+            } else {
+                btn.classList.add("disabled");
+                btn.disabled = true;
+            }
+        }
+
+    </script>
+    <script>
+        window.onload = function () {
+            var dtToday = new Date();
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate() + 1;
+            var year = dtToday.getFullYear();
+            if (month < 10) {
+                month = "0" + month.toString();
+            }
+            if (day < 10) {
+                day = "0" + day.toString();
+            }
+
+            var maxDate = year + "-" + month + "-" + day;
+            $("#date").attr("min", maxDate);
+        };
+    </script>
+</body>
+
+</html>
