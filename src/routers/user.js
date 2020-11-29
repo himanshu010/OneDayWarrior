@@ -10,21 +10,11 @@ const path = require("path");
 const hbs = require("hbs");
 const router = new express.Router();
 const createPDF = require("../functions/createPDF");
+const sendMail = require("../mails/sendMail");
+const { send } = require("@sendgrid/mail");
 
 var email;
 
-// create reusable transporter object using the default SMTP transport
-// require("dotenv").config();
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: process.env.EMAIL, // generated ethereal user
-    pass: process.env.EMAIL_PASSWORD, // generated ethereal password
-  },
-});
-//1
 const compile = async function (templateName, data) {
   const filePath = path.join(
     __dirname,
@@ -88,7 +78,6 @@ router.post("/verification", async (req, res) => {
         });
       }
     }
-    console.log(req.body);
     const key = randomize("0", 4);
     req.body.otp = key;
     if (!user) {
@@ -106,48 +95,18 @@ router.post("/verification", async (req, res) => {
       } catch (err) {
         res.status(400).send({ err });
       }
-      var mailOptions = {
-        to: req.body.email,
-        subject: "Otp for registration is: ",
-        html:
-          "<h3>OTP for account verification is </h3>" +
-          "<h1 style='font-weight:bold;'>" +
-          key +
-          "</h1>", // html body
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
-        res.render("verification", { msg: "OTP sent!" });
-      });
+      const subject = "[OneDayWarrior] Otp for registration is : " + key;
+      const text = "Your OTP for registeration is " + key;
+      sendMail(req.body.email, subject, text);
+      res.render("verification", { msg: "OTP sent!" });
     } else {
       user.otp = key;
       await user.save();
-      var mailOptions = {
-        to: req.body.email,
-        subject: "Otp for registration is: ",
-        html:
-          "<h3>OTP for account verification is </h3>" +
-          "<h1 style='font-weight:bold;'>" +
-          key +
-          "</h1>", // html body
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
-        res.render("verification", {
-          msg: "Already Registed! Verify OTP to proceed!",
-        });
+      const subject = "[OneDayWarrior] OTP for verification is " + key;
+      const text = "Already Registered! Your OTP for verification is " + key;
+      sendMail(user.email, subject, text);
+      res.render("verification", {
+        msg: "Already Registed! Verify OTP to proceed!",
       });
     }
   } catch (err) {
@@ -175,31 +134,18 @@ router.get("/download", async (req, res) => {
   res.render("downloadcerti");
 });
 router.post("/resend", async (req, res) => {
+  console.log(email, 12);
   try {
     const key = randomize("0", 4);
     const user = await User.findOne({ email });
     user.otp = key;
 
     await user.save();
+    const subject = "[OneDayWarrior] OTP for verification is " + key;
+    const text = "Your OTP for verification is " + key;
+    sendMail(email, subject, text);
 
-    var mailOptions = {
-      to: email,
-      subject: "Otp for registration is: ",
-      html:
-        "<h3>OTP for account verification is </h3>" +
-        "<h1 style='font-weight:bold;'>" +
-        key +
-        "</h1>", // html body
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log("Message sent: %s", info.messageId);
-      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-      res.render("verification", { msg: "new OTP sent" });
-    });
+    res.render("verification", { msg: "new OTP sent" });
   } catch (err) {
     res.render("error", { err });
   }
